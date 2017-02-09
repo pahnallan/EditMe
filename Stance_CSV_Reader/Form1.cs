@@ -67,12 +67,19 @@ namespace Stance_CSV_Reader
             saveFile();
         }
         #endregion 
-
+        
+        /// <summary>
+        /// Changes the text of the application window to the file path of opened
+        /// file plus the application name
+        /// </summary>
         private void updateApplicationHeader()
         {
             this.Text = opened_file_path + " - Stance Reader";
         }
 
+        /// <summary>
+        /// Opens a new csv file with 1 column
+        /// </summary>
         public void new_file()
         {
             DataTable dt = new DataTable();
@@ -80,6 +87,10 @@ namespace Stance_CSV_Reader
             dgvCSV.DataSource = dt;
         }
 
+        /// <summary>
+        /// Opens an existing CSV File and displays it in a grid view. Users may
+        /// edit the items in the grid.
+        /// </summary>
         public void open_file()
         {
             if (Directory.Exists("C:\\StanceAnalyzer"))
