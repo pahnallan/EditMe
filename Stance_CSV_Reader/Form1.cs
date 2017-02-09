@@ -70,7 +70,7 @@ namespace Stance_CSV_Reader
         
         /// <summary>
         /// Changes the text of the application window to the file path of opened
-        /// file plus the application name
+        /// file plus the application name.
         /// </summary>
         private void updateApplicationHeader()
         {
@@ -78,7 +78,7 @@ namespace Stance_CSV_Reader
         }
 
         /// <summary>
-        /// Opens a new csv file with 1 column
+        /// Opens a new csv file with 1 column and 1 row for editing.
         /// </summary>
         public void new_file()
         {
