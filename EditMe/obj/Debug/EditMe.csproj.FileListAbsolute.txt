@@ -6,3 +6,11 @@ C:\Users\Allan\Documents\SideProjects\EditMe\Stance_CSV_Reader\bin\Debug\EditMe.
 C:\Users\Allan\Documents\SideProjects\EditMe\Stance_CSV_Reader\obj\Debug\EditMe.exe
 C:\Users\Allan\Documents\SideProjects\EditMe\Stance_CSV_Reader\obj\Debug\EditMe.pdb
 C:\Users\Allan\Documents\SideProjects\EditMe\Stance_CSV_Reader\obj\Debug\EditMe.MainForm.resources
+C:\Users\Allan\Documents\SideProjects\EditMe\EditMe\bin\Debug\EditMe.exe.config
+C:\Users\Allan\Documents\SideProjects\EditMe\EditMe\bin\Debug\EditMe.exe
+C:\Users\Allan\Documents\SideProjects\EditMe\EditMe\bin\Debug\EditMe.pdb
+C:\Users\Allan\Documents\SideProjects\EditMe\EditMe\obj\Debug\EditMe.MainForm.resources
+C:\Users\Allan\Documents\SideProjects\EditMe\EditMe\obj\Debug\EditMe.Properties.Resources.resources
+C:\Users\Allan\Documents\SideProjects\EditMe\EditMe\obj\Debug\EditMe.csproj.GenerateResource.Cache
+C:\Users\Allan\Documents\SideProjects\EditMe\EditMe\obj\Debug\EditMe.exe
+C:\Users\Allan\Documents\SideProjects\EditMe\EditMe\obj\Debug\EditMe.pdb

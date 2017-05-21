@@ -14,17 +14,13 @@ namespace EditMe
 {
     public partial class MainForm : Form
     {
-        private char DELIMITER = ',';
-        public string opened_file_path = "";
+        private FileHandler fh = new FileHandler();
         private string stringToPrint = "";
-        public OpenFileDialog file_browser = new OpenFileDialog();
-        public SaveFileDialog file_saver = new SaveFileDialog();
+        private string opened_file_path = "";
 
         public MainForm()
         {
             InitializeComponent();
-            file_saver.DefaultExt = ".csv";
-            file_saver.Filter = "CSV files (*.csv)|*.csv|All files (*.*)|*.*";
         }
         #region Event Handlers
 
@@ -37,26 +33,12 @@ namespace EditMe
             }
         }
 
-        private void saveAsToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            saveAsFile();
-        }
-
-        private void exportToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            saveFile();
-        }
-
         private void imgSave_Click(object sender, EventArgs e)
         {
             saveFile();
         }
         #endregion 
-
-        private void updateApplicationHeader()
-        {
-            this.Text = opened_file_path + " - EditMe";
-        }
+     
 
         public void new_file()
         {
@@ -66,86 +48,13 @@ namespace EditMe
         }
 
         /// <summary>
-        /// Returns a datatable of the CSV File parsed into the correct column and row
-        /// </summary>
-        /// <returns></returns>
-        private DataTable openCSV(string file_name)
-        {
-            var dt = new DataTable();
-
-            // Creating the columns
-            //File.ReadLines(opened_file_path).Skip(1).Take(1)
-            //    .SelectMany(x => x.Split(new[] { DELIMITER }, StringSplitOptions.RemoveEmptyEntries))
-            //    .ToList()
-            //    .ForEach(x => dt.Columns.Add(x.Trim()));
-            opened_file_path = "C:\\StanceAnalyzer\\CSV_Files\\" + file_name;
-
-            int max_columns = 0;
-            int temp_count = 0;
-            var lines = File.ReadLines(opened_file_path);
-            foreach (var line in lines)
-            {
-                temp_count = line.Split(new[] { DELIMITER }, StringSplitOptions.RemoveEmptyEntries).Count();
-                if (temp_count > max_columns)
-                    max_columns = temp_count;
-            }
-
-            for (int i = 0; i < max_columns; i++)
-            {
-                dt.Columns.Add("");
-            }
-
-            // Adding the rows
-            File.ReadLines(opened_file_path)
-                .Select(x => x.Split(DELIMITER))
-                .ToList()
-                .ForEach(line => dt.Rows.Add(line));
-            return dt;
-        }
-
-        /// <summary>
-        /// Lets a user choose where to save a file and saves dgv to CSV.
-        /// </summary>
-        private void saveAsFile()
-        {
-            if (file_saver.ShowDialog() == DialogResult.OK)
-            {
-                try
-                {
-                    opened_file_path = file_saver.FileName;
-                    saveFile();
-                }
-                catch
-                {
-                    MessageBox.Show("Save Failed", "Unable to save the file. Make sure the path selected exists.");
-                }
-            }
-        }
-
-        /// <summary>
         /// Takes the datagridview and saves it as a CSV file
         /// </summary>
         private void saveFile()
         {
             try
             {
-                // If you're currently inside a cell editing, save that edit before building new csv string
-                dgvCSV.EndEdit();
-                var sb = new StringBuilder();
 
-                var headers = dgvCSV.Columns.Cast<DataGridViewColumn>();
-                sb.AppendLine(string.Join(",", headers.Select(column => column.HeaderText).ToArray()));
-
-                foreach (DataGridViewRow row in dgvCSV.Rows)
-                {
-                    if (!row.IsNewRow)
-                    {
-                        var cells = row.Cells.Cast<DataGridViewCell>();
-                        sb.AppendLine(string.Join(",", cells.Select(cell => cell.Value).ToArray()));
-                    }
-                }
-                System.IO.File.WriteAllText(opened_file_path, sb.ToString());
-                updateApplicationHeader();
             }
             catch (Exception e)
             {
@@ -187,14 +96,23 @@ namespace EditMe
         {
             try
             {
-                string selected_file = dgvFS.SelectedCells[0].Value.ToString();
-                dgvCSV.DataSource = openCSV(selected_file);
-                updateApplicationHeader();
+                if (fh.openFile())
+                {
+                    dgvCSV.DataSource = fh.getFileAsDT();
+                    fillFileSystemDir(fh.getSiblingFiles());
+                }
             }
             catch
             {
                 MessageBox.Show("Invalid CSV File", "File does not match CSV format");
             }
+        }
+
+        private void fillFileSystemDir(List<string> csv_files)
+        {
+            dgvFS.Rows.Clear();
+            csv_files.ForEach(line => dgvFS.Rows.Add(Path.GetFileName(line)));
+            lblNoCSV.Visible = dgvFS.Rows.Count <= 0;
         }
 
         private void Form1_Load(object sender, EventArgs e)
@@ -207,10 +125,10 @@ namespace EditMe
         private void dgvFS_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
             string selected_file = dgvFS.SelectedCells[0].Value.ToString();
-            dgvCSV.DataSource = openCSV(selected_file);
-            updateApplicationHeader();
+            //dgvCSV.DataSource = openCSV(selected_file);
+            //updateApplicationHeader();
         }
-
+        
         private void btnPrint_Click(object sender, EventArgs e)
         {
             if (opened_file_path == "")
@@ -262,6 +180,7 @@ namespace EditMe
             // Check to see if more pages are to be printed.
             e.HasMorePages = (stringToPrint.Length > 0);
         }
+        
 
     }
 }

@@ -88,6 +88,7 @@
             this.dgvCSV.DefaultCellStyle = dataGridViewCellStyle3;
             this.dgvCSV.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dgvCSV.Location = new System.Drawing.Point(0, 0);
+            this.dgvCSV.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.dgvCSV.Name = "dgvCSV";
             dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.Control;
@@ -101,7 +102,7 @@
             dataGridViewCellStyle5.SelectionBackColor = System.Drawing.Color.LightCoral;
             dataGridViewCellStyle5.SelectionForeColor = System.Drawing.Color.Black;
             this.dgvCSV.RowsDefaultCellStyle = dataGridViewCellStyle5;
-            this.dgvCSV.Size = new System.Drawing.Size(414, 441);
+            this.dgvCSV.Size = new System.Drawing.Size(653, 557);
             this.dgvCSV.TabIndex = 1;
             // 
             // panel1
@@ -110,8 +111,9 @@
             this.panel1.Controls.Add(this.splitContainer2);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel1.Location = new System.Drawing.Point(0, 0);
+            this.panel1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(720, 509);
+            this.panel1.Size = new System.Drawing.Size(960, 626);
             this.panel1.TabIndex = 2;
             // 
             // splitContainer2
@@ -119,6 +121,7 @@
             this.splitContainer2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.splitContainer2.FixedPanel = System.Windows.Forms.FixedPanel.Panel1;
             this.splitContainer2.Location = new System.Drawing.Point(0, 0);
+            this.splitContainer2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.splitContainer2.Name = "splitContainer2";
             this.splitContainer2.Orientation = System.Windows.Forms.Orientation.Horizontal;
             // 
@@ -129,8 +132,9 @@
             // splitContainer2.Panel2
             // 
             this.splitContainer2.Panel2.Controls.Add(this.splitContainer1);
-            this.splitContainer2.Size = new System.Drawing.Size(720, 509);
+            this.splitContainer2.Size = new System.Drawing.Size(960, 626);
             this.splitContainer2.SplitterDistance = 64;
+            this.splitContainer2.SplitterWidth = 5;
             this.splitContainer2.TabIndex = 5;
             // 
             // panel2
@@ -141,15 +145,17 @@
             this.panel2.Controls.Add(this.btnRefresh);
             this.panel2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel2.Location = new System.Drawing.Point(0, 0);
+            this.panel2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(720, 64);
+            this.panel2.Size = new System.Drawing.Size(960, 64);
             this.panel2.TabIndex = 2;
             // 
             // btnPrint
             // 
-            this.btnPrint.Location = new System.Drawing.Point(633, 12);
+            this.btnPrint.Location = new System.Drawing.Point(844, 15);
+            this.btnPrint.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnPrint.Name = "btnPrint";
-            this.btnPrint.Size = new System.Drawing.Size(75, 34);
+            this.btnPrint.Size = new System.Drawing.Size(100, 42);
             this.btnPrint.TabIndex = 2;
             this.btnPrint.Text = "Print";
             this.btnPrint.UseVisualStyleBackColor = true;
@@ -157,10 +163,10 @@
             // 
             // btnOpen
             // 
-            this.btnOpen.Enabled = false;
-            this.btnOpen.Location = new System.Drawing.Point(11, 12);
+            this.btnOpen.Location = new System.Drawing.Point(15, 15);
+            this.btnOpen.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnOpen.Name = "btnOpen";
-            this.btnOpen.Size = new System.Drawing.Size(75, 34);
+            this.btnOpen.Size = new System.Drawing.Size(100, 42);
             this.btnOpen.TabIndex = 1;
             this.btnOpen.Text = "Open";
             this.btnOpen.UseVisualStyleBackColor = true;
@@ -168,9 +174,10 @@
             // 
             // btnRefresh
             // 
-            this.btnRefresh.Location = new System.Drawing.Point(92, 12);
+            this.btnRefresh.Location = new System.Drawing.Point(123, 15);
+            this.btnRefresh.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnRefresh.Name = "btnRefresh";
-            this.btnRefresh.Size = new System.Drawing.Size(75, 34);
+            this.btnRefresh.Size = new System.Drawing.Size(100, 42);
             this.btnRefresh.TabIndex = 0;
             this.btnRefresh.Text = "Refresh";
             this.btnRefresh.UseVisualStyleBackColor = true;
@@ -181,7 +188,7 @@
             this.splitContainer1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.splitContainer1.FixedPanel = System.Windows.Forms.FixedPanel.Panel1;
             this.splitContainer1.Location = new System.Drawing.Point(0, 0);
-            this.splitContainer1.Margin = new System.Windows.Forms.Padding(3, 50, 3, 3);
+            this.splitContainer1.Margin = new System.Windows.Forms.Padding(4, 62, 4, 4);
             this.splitContainer1.Name = "splitContainer1";
             // 
             // splitContainer1.Panel1
@@ -192,17 +199,19 @@
             // splitContainer1.Panel2
             // 
             this.splitContainer1.Panel2.Controls.Add(this.dgvCSV);
-            this.splitContainer1.Size = new System.Drawing.Size(720, 441);
+            this.splitContainer1.Size = new System.Drawing.Size(960, 557);
             this.splitContainer1.SplitterDistance = 302;
+            this.splitContainer1.SplitterWidth = 5;
             this.splitContainer1.TabIndex = 4;
             // 
             // lblNoCSV
             // 
             this.lblNoCSV.AutoSize = true;
             this.lblNoCSV.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblNoCSV.Location = new System.Drawing.Point(3, 27);
+            this.lblNoCSV.Location = new System.Drawing.Point(4, 33);
+            this.lblNoCSV.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblNoCSV.Name = "lblNoCSV";
-            this.lblNoCSV.Size = new System.Drawing.Size(184, 24);
+            this.lblNoCSV.Size = new System.Drawing.Size(233, 29);
             this.lblNoCSV.TabIndex = 3;
             this.lblNoCSV.Text = "No CSV Files Found";
             // 
@@ -240,6 +249,7 @@
             this.dgvFS.DefaultCellStyle = dataGridViewCellStyle8;
             this.dgvFS.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dgvFS.Location = new System.Drawing.Point(0, 0);
+            this.dgvFS.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.dgvFS.MultiSelect = false;
             this.dgvFS.Name = "dgvFS";
             this.dgvFS.ReadOnly = true;
@@ -248,7 +258,7 @@
             dataGridViewCellStyle9.SelectionForeColor = System.Drawing.Color.Black;
             this.dgvFS.RowsDefaultCellStyle = dataGridViewCellStyle9;
             this.dgvFS.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvFS.Size = new System.Drawing.Size(302, 441);
+            this.dgvFS.Size = new System.Drawing.Size(302, 557);
             this.dgvFS.TabIndex = 3;
             this.dgvFS.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvFS_CellClick);
             this.dgvFS.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvFS_CellDoubleClick);
@@ -260,15 +270,16 @@
             this.file_name.Name = "file_name";
             this.file_name.ReadOnly = true;
             // 
-            // Form1
+            // MainForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSize = true;
-            this.ClientSize = new System.Drawing.Size(720, 509);
+            this.ClientSize = new System.Drawing.Size(960, 626);
             this.Controls.Add(this.panel1);
             this.KeyPreview = true;
-            this.Name = "Form1";
+            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Name = "MainForm";
             this.Text = "Stance Reader";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.Form1_Load);
