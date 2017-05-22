@@ -151,7 +151,7 @@
             // 
             // btnPrint
             // 
-            this.btnPrint.Location = new System.Drawing.Point(844, 15);
+            this.btnPrint.Location = new System.Drawing.Point(231, 15);
             this.btnPrint.Margin = new System.Windows.Forms.Padding(4);
             this.btnPrint.Name = "btnPrint";
             this.btnPrint.Size = new System.Drawing.Size(100, 42);
@@ -207,7 +207,7 @@
             // 
             this.lblNoCSV.AutoSize = true;
             this.lblNoCSV.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblNoCSV.Location = new System.Drawing.Point(4, 33);
+            this.lblNoCSV.Location = new System.Drawing.Point(10, 33);
             this.lblNoCSV.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblNoCSV.Name = "lblNoCSV";
             this.lblNoCSV.Size = new System.Drawing.Size(233, 29);

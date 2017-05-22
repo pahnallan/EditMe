@@ -126,9 +126,6 @@ namespace EditMe
 
         private void Form1_Load(object sender, EventArgs e)
         {
-            if (!Directory.Exists("C:\\StanceAnalyzer\\CSV_Files"))
-                Directory.CreateDirectory("C:\\StanceAnalyzer\\CSV_Files");
-            refreshFS();
         }
 
         private void dgvFS_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
@@ -140,12 +137,11 @@ namespace EditMe
         
         private void btnPrint_Click(object sender, EventArgs e)
         {
-            if (opened_file_path == "")
+            if (!fh.isOpened())
             {
                 MessageBox.Show("Unable to print. Please open a CSV File before attempting to print.", "Print Message");
                 return;
             }
-            readFile();
             PrintDocument pd = new PrintDocument();
             pd.PrintPage += new PrintPageEventHandler(this.pd_PrintPage);
             using (PrintDialog printDialog = new PrintDialog())
@@ -153,7 +149,7 @@ namespace EditMe
                 string dateTimeTemp = string.Format("{0:MM-dd-yyyy HH:mm:ss - ff}", DateTime.Now);
                 printDialog.Document = pd;
                 printDialog.Document.DocumentName = "-Main-" + dateTimeTemp;
-
+                stringToPrint = fh.getFileAsString();
                 if (printDialog.ShowDialog(this) == DialogResult.OK)
                     printDialog.Document.Print();
             }

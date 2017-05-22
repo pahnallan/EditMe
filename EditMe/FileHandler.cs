@@ -18,6 +18,8 @@ namespace EditMe
         public OpenFileDialog file_browser = new OpenFileDialog();
         public SaveFileDialog file_saver = new SaveFileDialog();
 
+        IEnumerable<string> lines;
+
         public FileHandler()
         {
             file_saver.DefaultExt = ".csv";
@@ -53,7 +55,7 @@ namespace EditMe
 
             int max_columns = 0;
             int temp_count = 0;
-            var lines = File.ReadLines(file_browser.FileName);
+            lines = File.ReadLines(file_browser.FileName);
             foreach (var line in lines)
             {
                 temp_count = line.Split(new[] { DELIMITER }, StringSplitOptions.RemoveEmptyEntries).Count();
@@ -72,6 +74,16 @@ namespace EditMe
                 .ToList()
                 .ForEach(line => dt.Rows.Add(line));
             return dt;
+        }
+
+        public IEnumerable<string> getFileAsLines()
+        {
+            return lines;
+        }
+
+        public string getFileAsString()
+        {
+            return File.ReadAllText(file_browser.FileName);
         }
 
         public List<string> getSiblingFiles()
