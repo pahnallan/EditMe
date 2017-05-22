@@ -12,10 +12,11 @@ namespace EditMe
     class FileHandler
     {
         char DELIMITER = ',';
-        public OpenFileDialog file_browser = new OpenFileDialog();
-        public SaveFileDialog file_saver = new SaveFileDialog();
         public bool file_valid = false;
         string parent_directory = "";
+
+        public OpenFileDialog file_browser = new OpenFileDialog();
+        public SaveFileDialog file_saver = new SaveFileDialog();
 
         public FileHandler()
         {
@@ -26,9 +27,13 @@ namespace EditMe
         public bool openFile()
         {
             file_browser.InitialDirectory = "./";
-            file_valid = file_browser.ShowDialog() == DialogResult.OK;
-            if (file_valid)
-                parent_directory = Path.GetDirectoryName(file_browser.FileName);
+            file_valid = file_browser.ShowDialog() == DialogResult.OK && file_browser.FileName.Contains(".csv");
+            parent_directory = file_valid ? parent_directory = Path.GetDirectoryName(file_browser.FileName) : "";
+            return file_valid;
+        }
+
+        public bool isOpened()
+        {
             return file_valid;
         }
 

@@ -88,7 +88,7 @@
             this.dgvCSV.DefaultCellStyle = dataGridViewCellStyle3;
             this.dgvCSV.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dgvCSV.Location = new System.Drawing.Point(0, 0);
-            this.dgvCSV.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.dgvCSV.Margin = new System.Windows.Forms.Padding(4);
             this.dgvCSV.Name = "dgvCSV";
             dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.Control;
@@ -98,7 +98,6 @@
             dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
             dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
             this.dgvCSV.RowHeadersDefaultCellStyle = dataGridViewCellStyle4;
-            this.dgvCSV.RowHeadersVisible = false;
             dataGridViewCellStyle5.SelectionBackColor = System.Drawing.Color.LightCoral;
             dataGridViewCellStyle5.SelectionForeColor = System.Drawing.Color.Black;
             this.dgvCSV.RowsDefaultCellStyle = dataGridViewCellStyle5;
@@ -111,7 +110,7 @@
             this.panel1.Controls.Add(this.splitContainer2);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel1.Location = new System.Drawing.Point(0, 0);
-            this.panel1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.panel1.Margin = new System.Windows.Forms.Padding(4);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(960, 626);
             this.panel1.TabIndex = 2;
@@ -121,7 +120,7 @@
             this.splitContainer2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.splitContainer2.FixedPanel = System.Windows.Forms.FixedPanel.Panel1;
             this.splitContainer2.Location = new System.Drawing.Point(0, 0);
-            this.splitContainer2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.splitContainer2.Margin = new System.Windows.Forms.Padding(4);
             this.splitContainer2.Name = "splitContainer2";
             this.splitContainer2.Orientation = System.Windows.Forms.Orientation.Horizontal;
             // 
@@ -145,7 +144,7 @@
             this.panel2.Controls.Add(this.btnRefresh);
             this.panel2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel2.Location = new System.Drawing.Point(0, 0);
-            this.panel2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.panel2.Margin = new System.Windows.Forms.Padding(4);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(960, 64);
             this.panel2.TabIndex = 2;
@@ -153,7 +152,7 @@
             // btnPrint
             // 
             this.btnPrint.Location = new System.Drawing.Point(844, 15);
-            this.btnPrint.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnPrint.Margin = new System.Windows.Forms.Padding(4);
             this.btnPrint.Name = "btnPrint";
             this.btnPrint.Size = new System.Drawing.Size(100, 42);
             this.btnPrint.TabIndex = 2;
@@ -164,7 +163,7 @@
             // btnOpen
             // 
             this.btnOpen.Location = new System.Drawing.Point(15, 15);
-            this.btnOpen.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnOpen.Margin = new System.Windows.Forms.Padding(4);
             this.btnOpen.Name = "btnOpen";
             this.btnOpen.Size = new System.Drawing.Size(100, 42);
             this.btnOpen.TabIndex = 1;
@@ -175,7 +174,7 @@
             // btnRefresh
             // 
             this.btnRefresh.Location = new System.Drawing.Point(123, 15);
-            this.btnRefresh.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnRefresh.Margin = new System.Windows.Forms.Padding(4);
             this.btnRefresh.Name = "btnRefresh";
             this.btnRefresh.Size = new System.Drawing.Size(100, 42);
             this.btnRefresh.TabIndex = 0;
@@ -249,7 +248,7 @@
             this.dgvFS.DefaultCellStyle = dataGridViewCellStyle8;
             this.dgvFS.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dgvFS.Location = new System.Drawing.Point(0, 0);
-            this.dgvFS.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.dgvFS.Margin = new System.Windows.Forms.Padding(4);
             this.dgvFS.MultiSelect = false;
             this.dgvFS.Name = "dgvFS";
             this.dgvFS.ReadOnly = true;
@@ -278,7 +277,7 @@
             this.ClientSize = new System.Drawing.Size(960, 626);
             this.Controls.Add(this.panel1);
             this.KeyPreview = true;
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "MainForm";
             this.Text = "Stance Reader";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;

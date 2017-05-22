@@ -99,12 +99,21 @@ namespace EditMe
                 if (fh.openFile())
                 {
                     dgvCSV.DataSource = fh.getFileAsDT();
+                    updateRowHeaderNumbers();
                     fillFileSystemDir(fh.getSiblingFiles());
                 }
             }
             catch
             {
                 MessageBox.Show("Invalid CSV File", "File does not match CSV format");
+            }
+        }
+
+        private void updateRowHeaderNumbers()
+        {
+            foreach (DataGridViewRow row in dgvCSV.Rows)
+            {
+                row.HeaderCell.Value = String.Format("{0}", row.Index + 1);
             }
         }
 
