@@ -26,11 +26,11 @@ namespace EditMe
         public MainForm(string file_path)
         {
             InitializeComponent();
-                debugLabel.Text = file_path;
-                fh.openFile(file_path);
-                dgvCSV.DataSource = fh.getFileAsDT();
-                updateRowHeaderNumbers();
-                fillFileSystemDir(fh.getSiblingFiles());
+            debugLabel.Text = file_path;
+            fh.openFile(file_path);
+            dgvCSV.DataSource = fh.getFileAsDT();
+            updateRowHeaderNumbers();
+            fillFileSystemDir(fh.getSiblingFiles());
         }
         #region Event Handlers
 
@@ -74,21 +74,10 @@ namespace EditMe
 
         private void refreshFS()
         {
-            if (!Directory.Exists("C:\\StanceAnalyzer\\CSV_Files\\"))
+            if (fh.isOpened())
             {
-                lblNoCSV.Visible = true;
-                return;
+                fillFileSystemDir(fh.getSiblingFiles());
             }
-            string[] list_of_string = Directory.GetFiles("C:\\StanceAnalyzer\\CSV_Files\\");
-            if (list_of_string.Count() == 0)
-            {
-                lblNoCSV.Visible = true;
-                return;
-            }
-            lblNoCSV.Visible = false;
-            dgvFS.Rows.Clear();
-            list_of_string.ToList().ForEach(line => dgvFS.Rows.Add(Path.GetFileName(line)));
-            dgvFS.ClearSelection();
 
         }
 
