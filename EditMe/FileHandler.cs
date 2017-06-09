@@ -34,6 +34,14 @@ namespace EditMe
             return file_valid;
         }
 
+        public bool openFile(string file_path)
+        {
+            file_browser.InitialDirectory = "./";
+            file_browser.FileName = file_path;
+            parent_directory = Path.GetDirectoryName(file_browser.FileName);
+            return true;
+        }
+
         public bool isOpened()
         {
             return file_valid;

@@ -22,6 +22,16 @@ namespace EditMe
         {
             InitializeComponent();
         }
+
+        public MainForm(string file_path)
+        {
+            InitializeComponent();
+                debugLabel.Text = file_path;
+                fh.openFile(file_path);
+                dgvCSV.DataSource = fh.getFileAsDT();
+                updateRowHeaderNumbers();
+                fillFileSystemDir(fh.getSiblingFiles());
+        }
         #region Event Handlers
 
         private void Form1_KeyDown(object sender, KeyEventArgs e)
